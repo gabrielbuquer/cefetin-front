@@ -2,6 +2,7 @@ import { Header } from "@/components/Header";
 import "@/styles/globals.css";
 import { Container } from "@mui/material";
 import type { AppProps } from "next/app";
+import Head from "next/head";
 import { styled } from "styled-components";
 
 const Main = styled.div`
@@ -27,7 +28,15 @@ const StyledContainer = styled(Container)`
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <Main>
+    <>
+      <Head>
+        <title>CEFET-IN</title>
+        <meta name="description" content="Sistema de gestão de presença para alunos do CEFET-RJ" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Main>
+      
       <Header />
       <Content>
         <StyledContainer maxWidth="lg">
@@ -35,5 +44,7 @@ export default function App({ Component, pageProps }: AppProps) {
         </StyledContainer>
       </Content>
     </Main>
+    </>
+    
   );
 }

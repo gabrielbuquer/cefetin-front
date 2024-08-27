@@ -60,12 +60,6 @@ function preventDefault(event: React.MouseEvent) {
 }
 
 export default function Orders() {
-  const router = useRouter();
-
-  const handleClick = () => {
-    router.push('/users/1');
-  };
-
   return (
     <React.Fragment>
       <Table size="small">
@@ -80,7 +74,7 @@ export default function Orders() {
         </TableHead>
         <TableBody>
           {rows.map((row) => (
-            <TableRow onClick={() => handleClick()} key={row.id}>
+            <TableRow key={row.id}>
               <TableCell>{row.date}</TableCell>
               <TableCell>{row.name}</TableCell>
               <TableCell>{row.shipTo}</TableCell>
